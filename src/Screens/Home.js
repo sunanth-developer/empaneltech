@@ -80,7 +80,7 @@ const Home = () => {
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/Quality.png')} alt="Card 3" className="card-image" />
     <h3 className="card-title">Quality Assurance</h3>
-    <p className="card-description">When it comes to maintaining quality, there is no room for errors, and to ensure that, robust testing is required. We provide quality assurance and testing services to help businesses across the world to reduce the time and effort in testing. We at Empaneltech emphasis more on industry domain and technology based testing.</p>
+    <p className="card-description">When it comes to maintaining quality, there is no room for errors, and to ensure that, robust testing is required. We provide quality assurance and testing services to help businesses across the world to reduce the time and effort in testing. We at Sidram emphasis more on industry domain and technology based testing.</p>
   </div>
 </div>
 

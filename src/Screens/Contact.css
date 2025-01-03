@@ -89,3 +89,23 @@
         width: 80%;
     }
 }
+
+.contact-page {
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #000000;
+}
+
+.contact-content {
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #000000;
+}
+
+/* Ensure sections have black background */
+.contact-hero,
+.contact-form-section {
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #000000;
+}

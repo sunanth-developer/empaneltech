@@ -186,13 +186,19 @@
 .careers-page {
   color: white;
   align-items: center;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #000000;
 }
 
-.career-content {
-  max-width: 900px;
+.careers-content {
+  max-width: 80%;
   margin: 0 auto;
   padding: 20px;
   color: white;
+  margin-top: 0;
+  padding-top: 0;
+  background-color: #000000;
 }
 
 .career-content h2 {
@@ -230,7 +236,8 @@
 
 .challenges-list {
   margin: 30px 0;
-  padding-left: 25px;
+  list-style: none;
+  padding-left: 0;
 }
 
 .challenges-list li {
@@ -238,6 +245,16 @@
   color: white;
   line-height: 1.8;
   font-size: 1.1rem;
+  position: relative;
+  padding-left: 25px;
+}
+
+.challenges-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .contact-section {
@@ -263,36 +280,10 @@
 
 .submit-resume-section {
   background: rgba(255, 255, 255, 0.1);
-  color: white;
   padding: 40px 30px;
   border-radius: 8px;
   text-align: center;
   margin: 50px 0 30px;
-  line-height: 1.8;
-}
-
-.tab-button {
-  padding: 12px 24px;
-  font-size: 1.1rem;
-  border: 2px solid white;
-  background: transparent;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-button.active {
-  background: white;
-  color: #1a1f71;
-}
-
-.tab-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.tab-button.active:hover {
-  background: white;
 }
 
 .submit-button {
@@ -313,13 +304,22 @@
 }
 
 @media screen and (max-width: 768px) {
-  .career-content {
+  .careers-content {
+    max-width: 90%;
     padding: 15px;
   }
   
   .quote-section {
     font-size: 1.1rem;
     padding: 20px;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 480px) {
+  .careers-content {
+    max-width: 95%;
+    padding: 10px;
   }
 }
 
@@ -333,16 +333,69 @@
     padding: 0 20px;
 }
 
+.tab-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-button.active {
+    background: white;
+    color: #1a1f71;
+    font-weight: 600;
+}
+
+.tab-button.active:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.tab-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 @media screen and (max-width: 768px) {
     .career-tabs {
         flex-direction: column;
-        width: 80%;
+        width: 90%;
         margin: 20px auto;
+        gap: 15px;
     }
 
     .tab-button {
         width: 100%;
         max-width: 300px;
+        padding: 12px 20px;
+        font-size: 1rem;
     }
 }
 
@@ -383,6 +436,8 @@
     padding-left: 25px;
     position: relative;
     margin-bottom: 15px;
+    line-height: 1.8;
+    font-size: 1.1rem;
 }
 
 .requirements-section li::before,
@@ -399,23 +454,34 @@
 .culture-section,
 .career-cta-section {
     margin: 40px 0;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    padding: 30px 0; /* Removed horizontal padding */
 }
 
 .link-button {
     background: none;
-    border: none;
+    border: 2px solid white;
     color: white;
-    text-decoration: underline;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 0;
     font: inherit;
+    transition: all 0.3s ease;
 }
 
 .link-button:hover {
-    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.experienced-hire h3 {
+    margin: 30px 0 20px;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.experienced-hire p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 .job-card h4 {
@@ -632,4 +698,132 @@
   border-radius: 10px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   z-index: -1;
+}
+
+.careers-hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.careers-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.why-join-us {
+  padding: 60px 20px;
+  background: white;
+}
+
+.why-join-us h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  padding: 30px;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.experienced-hire {
+  color: white;
+  padding: 40px 0;
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #000000;
+}
+
+.requirements-section ul,
+.positions-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.requirements-section li,
+.positions-section li {
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 15px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.requirements-section li::before,
+.positions-section li::before {
+  content: "•";
+  color: white;
+  position: absolute;
+  left: 0;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.consulting-section,
+.culture-section,
+.career-cta-section {
+  margin: 40px 0;
+  padding: 30px 0; /* Removed horizontal padding */
+}
+
+.link-button {
+  background: none;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.3s ease;
+}
+
+.link-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.experienced-hire h3 {
+  margin: 30px 0 20px;
+  font-size: 1.8rem;
+  color: white;
+}
+
+.experienced-hire p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+/* Adjust the body padding to exactly match navbar height */
+body {
+  margin: 0;
+  padding-top: 60px; /* Exactly matches navbar height */
+  background-color: #000000; /* Or your desired background color */
+}
+
+/* Remove any extra space from sections */
+.careers-hero,
+.experienced-hire,
+.current-openings {
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #000000;
 }

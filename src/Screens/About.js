@@ -13,7 +13,7 @@ export default function AboutUs  ()  {
         <p className='aboutusheadtext'>You can only profit from what you manage, and you can only manage what you measure.</p>
         <p className='about-us-text'>Traditionally, customers and utility companies have relied on conventional utility meter data provided through billing statements, often weeks or a month after usage. This data, based solely on load consumption, offers limited actionable insight. However, with smart devices and advanced monitoring tools, utility companies and consumers can now gain real-time insights into energy usage, site health, and equipment performance. This empowers them to actively manage operations and make adjustments before potential savings are lost.</p>
         <p className='about-us-text'>Rebates are often undervalued by companies and perceived as a cumbersome process by consumers. Our Instant Rebate solutions simplify the process, enabling businesses to focus on driving sales and increasing revenue instead of managing rebate complexities.</p>
-        <p className='about-us-text'>Empaneltech, in collaboration with Empaneltech, delivers innovative smart technology solutions and services that revolutionize energy efficiency. Together, we provide advanced platforms and tools to utility companies, retail providers, and consumers, helping them enhance energy savings and streamline sales using optimized rebate programs. Our partnership aims to transform how the world perceives and achieves energy efficiency.</p>
+        <p className='about-us-text'>Sidram, in collaboration with Sidram, delivers innovative smart technology solutions and services that revolutionize energy efficiency. Together, we provide advanced platforms and tools to utility companies, retail providers, and consumers, helping them enhance energy savings and streamline sales using optimized rebate programs. Our partnership aims to transform how the world perceives and achieves energy efficiency.</p>
        
       </section>
 
@@ -41,9 +41,9 @@ export default function AboutUs  ()  {
             <p className="info-card-text">
             "Energy saved is energy earned, and data saved is money generated."  
 
-At Empaneltech, our vision is to harness the power of technology to support nations in achieving carbon neutrality while empowering companies to focus on their core business operations without the burden of managing complex data tracking processes.
+At Sidram, our vision is to harness the power of technology to support nations in achieving carbon neutrality while empowering companies to focus on their core business operations without the burden of managing complex data tracking processes.
 
-We think long-term. Our mission is to build enduring partnerships with our clients, ensuring we avoid costly mistakes and consistently exceed expectations. At Empaneltech, every client matters equally. While organizational needs may vary, our commitment to delivering exceptional service remains the same for all.
+We think long-term. Our mission is to build enduring partnerships with our clients, ensuring we avoid costly mistakes and consistently exceed expectations. At Sidram, every client matters equally. While organizational needs may vary, our commitment to delivering exceptional service remains the same for all.
 
 As a forward-thinking company, we are committed to staying at the forefront of technology innovation. We combine our expertise and passion for cutting-edge solutions with your industry knowledge to elevate your organization to new heights. Through our Staff Augmentation and Quality Assurance Services, we aim to drive excellence and deliver transformative results.
 
