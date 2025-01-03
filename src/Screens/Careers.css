@@ -1,0 +1,635 @@
+.careers-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Create a grid container for job cards */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 30px; /* Space between cards */
+  margin-top: 40px;
+  perspective: 2000px; /* Add perspective for 3D effect */
+}
+
+.job-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  will-change: transform, box-shadow;
+}
+
+.jobs-grid .job-card:hover {
+  transform: translateZ(50px) !important;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 15px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Add subtle animation to content on hover */
+.job-card > * {
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover > * {
+  transform: translateZ(10px); /* Push content slightly forward */
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .jobs-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    perspective: none;
+  }
+  
+  .job-card:hover {
+    transform: translateY(-10px) !important;
+  }
+}
+
+.job-card h3 {
+  color: black !important;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.job-card .job-location {
+  color: black !important;
+  margin-bottom: 15px;
+  text-align: left !important;
+  padding-left: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.job-location::before {
+  content: "📍";
+  margin-right: 5px;
+}
+
+.job-experience {
+  color: black;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.job-requirements {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.job-requirements li {
+  color: black !important;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.job-requirements li::before {
+  content: "•";
+  color: #1a1f71;
+  position: absolute;
+  left: 0;
+}
+
+/* Apply buttons container */
+.apply-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  gap: 10px;
+  margin-top: auto; /* Push to bottom of card */
+  width: 100%;
+  padding: 20px 0; /* Add some padding top and bottom */
+}
+
+/* Common button styles */
+.apply-button,
+.linkedin-apply-button {
+  width: 90%;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 700 !important; /* Make text bold */
+  text-transform: uppercase; /* Optional: makes text uppercase */
+  letter-spacing: 0.5px; /* Optional: adds slight letter spacing */
+}
+
+/* Apply Now button */
+.apply-button {
+  background-color: black !important;
+  color: white !important;
+  border: none;
+}
+
+.apply-button:hover {
+  background-color: #333 !important;
+  transform: translateY(-2px);
+}
+
+/* LinkedIn button */
+.linkedin-apply-button {
+  background-color: #0077b5 !important;
+  color: white !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.linkedin-apply-button:hover {
+  background-color: #006097 !important;
+  transform: translateY(-2px);
+}
+
+/* LinkedIn icon */
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .job-listings {
+    grid-template-columns: 1fr;
+  }
+  
+  .career-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%;
+  }
+
+  .tab-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.careers-page {
+  color: white;
+  align-items: center;
+}
+
+.career-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+.career-content h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin: 40px 0 25px;
+  line-height: 1.4;
+}
+
+.career-content h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin: 35px 0 20px;
+  line-height: 1.4;
+}
+
+.career-content p {
+  color: white;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.quote-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  margin: 40px 0;
+  border-left: 4px solid white;
+  font-size: 1.3rem;
+  font-style: italic;
+  text-align: center;
+  color: white;
+  line-height: 1.8;
+}
+
+.challenges-list {
+  margin: 30px 0;
+  padding-left: 25px;
+}
+
+.challenges-list li {
+  margin-bottom: 15px;
+  color: white;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  margin: 40px 0;
+  text-align: center;
+  color: white;
+  line-height: 1.8;
+}
+
+.contact-section a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+.submit-resume-section {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 40px 30px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 50px 0 30px;
+  line-height: 1.8;
+}
+
+.tab-button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background: white;
+  color: #1a1f71;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-button.active:hover {
+  background: white;
+}
+
+.submit-button {
+  background: white;
+  color: #1a1f71;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  .career-content {
+    padding: 15px;
+  }
+  
+  .quote-section {
+    font-size: 1.1rem;
+    padding: 20px;
+  }
+}
+
+.career-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .career-tabs {
+        flex-direction: column;
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .tab-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+.career-banner {
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    overflow: hidden;
+    margin: 30px auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.career-banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .career-banner {
+        width: 95%;
+        height: 150px;
+    }
+}
+
+.requirements-section ul,
+.positions-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.requirements-section li,
+.positions-section li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.requirements-section li::before,
+.positions-section li::before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.consulting-section,
+.culture-section,
+.career-cta-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font: inherit;
+}
+
+.link-button:hover {
+    opacity: 0.8;
+}
+
+.job-card h4 {
+    color: black !important;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.job-requirements {
+    margin: 15px 0;
+    padding-left: 0;
+}
+
+.job-requirements li {
+    color: black !important;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.job-requirements li::before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+}
+
+.job-location {
+    color: black;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* Update all list items to be white */
+.career-content li,
+.job-requirements li,
+.challenges-list li,
+.requirements-section li,
+.positions-section li {
+    color: white !important; /* Using !important to override any other styles */
+    line-height: 1.8;
+}
+
+/* Update all bullet points to be white */
+.job-requirements li::before,
+.challenges-list li::before,
+.requirements-section li::before,
+.positions-section li::before {
+    content: "•";
+    color: white;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.apply-buttons {
+  margin-top: auto; /* Push buttons to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.apply-button,
+.linkedin-apply-button {
+  width: 90% !important;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  display: block;
+  transform: translateY(0);
+}
+
+.apply-button {
+  background-color: #1a1f71;
+  color: white;
+  border: none;
+}
+
+.apply-button:hover {
+  background-color: #151b5d;
+}
+
+.linkedin-apply-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #0077b5;
+  color: white;
+  border: none;
+  text-decoration: none;
+  transform: translateY(0) translateZ(0);
+  transition: all 0.3s ease;
+}
+
+.linkedin-apply-button:hover {
+  background-color: #006097;
+}
+
+.linkedin-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 768px) {
+  .apply-buttons {
+    flex-direction: column !important;
+  }
+}
+
+.loading,
+.error,
+.no-jobs {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+.error {
+  color: #dc3545;
+}
+
+.careers-title {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+/* Ensure the list items stay black even after visited */
+.job-requirements li:visited,
+.job-requirements li:active {
+  color: black !important;
+}
+
+/* Job title and location */
+.job-card h3 {
+  color: black !important;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.job-card .job-location {
+  color: black !important;
+  margin-bottom: 15px;
+  text-align: left !important;
+  padding-left: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.job-location::before {
+  content: "📍";
+  margin-right: 5px;
+}
+
+/* Section headers */
+.job-card h4 {
+  color: black !important;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* List items */
+.job-card .job-requirements {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.job-card .job-requirements li {
+  color: black !important;
+  margin-bottom: 8px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Override any existing styles */
+.job-card * {
+  color: black !important;
+}
+
+/* Keep button text colors as they are */
+.apply-button,
+.linkedin-apply-button {
+  color: white !important;
+}
+
+/* Keep LinkedIn button styling but add hover effect */
+.linkedin-apply-button {
+  transition: all 0.3s ease;
+}
+
+.linkedin-apply-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Add smooth transition for box-shadow */
+.job-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: -1;
+}

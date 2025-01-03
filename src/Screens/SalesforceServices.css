@@ -1,0 +1,172 @@
+.salesforce-services {
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.main-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.main-subtitle {
+  color: #666;
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.service-card {
+  width: 90%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.service-main-title {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.service-main-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.service-content {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.service-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image-container {
+  flex: 0 0 45%;
+}
+
+.service-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.service-text-content {
+  flex: 0 0 55%;
+  padding: 20px;
+}
+
+.service-heading {
+  color: #1a1f71;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service-subheading {
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.service-description {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.service-description-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.service-description-item {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #555;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.service-description-item::before {
+  content: "•";
+  color: #1a1f71;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 8px;
+  top: -2px;
+}
+
+/* Adjust spacing for mobile */
+@media screen and (max-width: 768px) {
+  .service-content,
+  .service-content.reverse {
+    flex-direction: column;
+  }
+
+  .service-image-container,
+  .service-text-content {
+    flex: 0 0 100%;
+  }
+
+  .service-image {
+    height: 200px;
+  }
+
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .main-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .service-main-title {
+    font-size: 1.5rem;
+  }
+
+  .service-main-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-heading {
+    font-size: 1.3rem;
+  }
+
+  .service-subheading {
+    font-size: 1.1rem;
+  }
+
+  .service-description-item {
+    padding-left: 20px;
+    font-size: 1rem;
+  }
+}
