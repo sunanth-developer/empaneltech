@@ -41,7 +41,7 @@ const Home = () => {
 
 <div class="container">
         <h2>Our Services</h2>
-        <p>Consulting Services means the provision of expertise or strategic advice that is presented for consideration and decision-making.</p>
+        <p>Consulting Services refers to the delivery of specialized expertise or strategic guidance to assist in informed decision-making and problem-solving.</p>
     </div>
 
 
@@ -49,38 +49,39 @@ const Home = () => {
   <div className="card">
     <img src={require('../assets/Utility.png')} alt="Card 1" className="card-image" />
     <h3 className="card-title">Utility services</h3>
-    <p className="card-description">We provide solution to Utility service providers, businesses and individuals with our tools and technology to increase the visibility of consumption of energy and improve means and process to encourage saving energy that contributes to nation’s carbon neutrality.</p>
+    <p className="card-description">
+    We offer solutions for utility service providers, businesses, and individuals through advanced tools and technology, enhancing energy consumption visibility and promoting processes that encourage energy savings, contributing to the nation’s carbon neutrality goals.</p>
   </div>
 
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/Business.png')} alt="Card 2" className="card-image" />
     <h3 className="card-title">Business services</h3>
-    <p className="card-description">Rebate is often underestimated by companies and is thought as a cumbersome process by consumers. Our Instant rebate solutions helps companies to worry less about managing rebate process by making it instant right at the time of purchase, and allow them to concentrate on promotion of sales to increase revenue and of course customer data for future marketing.</p>
+    <p className="card-description">Rebates are often undervalued by companies and perceived as a complex process by consumers. Our Instant Rebate Solutions simplify this by streamlining the process at the point of purchase, enabling companies to focus on boosting sales, increasing revenue, and gathering valuable customer data for future marketing efforts.</p>
   </div>
 
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/it-staff.png')} alt="Card 3" className="card-image" />
     <h3 className="card-title">IT Staff Augmentation</h3>
-    <p className="card-description">We apply our expertise to bring to you the best employees as per your company’s niche and culture. Get rid of skimming through boring resumes and spend your time on productive stuff while we take charge of your recruitment through our Placement services. We understand the need of hiring qualified and experienced employees and nothing beats our team at this.</p>
+    <p className="card-description">We leverage our expertise to connect you with top talent tailored to your company’s niche and culture. Say goodbye to sorting through countless resumes and focus on what matters most while we handle your recruitment needs through our Placement Services. We understand the importance of hiring skilled and experienced professionals, and our team excels at delivering the best candidates for your business.</p>
   </div>
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/application-development.png')} alt="Card 1" className="card-image" />
     <h3 className="card-title">Application Development</h3>
-    <p className="card-description">We provide application development services to provide your business with highly functional and user-friendly applications developed in Java, .Net, iOs and Android platforms. Our products CryptoSurvey360, Clidiem speaks for themselves about the vision, Clarity and our expertise in delivering quality products.</p>
+    <p className="card-description">We offer application development services to empower your business with highly functional and user-friendly applications built on platforms such as Java, .Net, iOS, and Android. Our flagship products, **CryptoSurvey360** and **Clidiem**, reflect our vision, clarity, and commitment to delivering exceptional quality and innovation.</p>
   </div>
 
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/outsourcing.png')} alt="Card 2" className="card-image" />
     <h3 className="card-title">Outsourcing</h3>
-    <p className="card-description">Business Process Outsourcing</p>
-    <p className="card-description">Recruitment Process Outsourcing</p>
+    <p className="card-description">Business Process Outsourcing & Recruitment Process Outsourcing</p>
+    
     
   </div>
 
   <div className="card" onClick={handleServiceClick}>
     <img src={require('../assets/Quality.png')} alt="Card 3" className="card-image" />
     <h3 className="card-title">Quality Assurance</h3>
-    <p className="card-description">When it comes to maintaining quality, there is no room for errors, and to ensure that, robust testing is required. We provide quality assurance and testing services to help businesses across the world to reduce the time and effort in testing. We at Sidram  emphasis more on industry domain and technology based testing.</p>
+    <p className="card-description">Maintaining quality leaves no room for errors, which is why robust testing is essential. At Empaneltech, we provide quality assurance and testing services that help businesses worldwide minimize testing time and effort. Our approach emphasizes industry-specific domains and technology-driven testing to deliver reliable results.</p>
   </div>
 </div>
 

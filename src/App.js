@@ -4,7 +4,6 @@ import './App.css';
 import Footer from './Screens/Footer';
 import Home from './Screens/Home';
 import About from './Screens/About';
-import Contact from './Screens/Contact';
 import Navbar from './Screens/Navbar';
 import Contactus from './Screens/Contactus';
 import SalesforceServices from './Screens/SalesforceServices';
@@ -21,7 +20,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/contactus" element={<Contactus />} />
             <Route path="/salesforce" element={<SalesforceServices />} />
             <Route path="/careers" element={<Careers />} />

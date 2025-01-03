@@ -39,7 +39,7 @@
 }
 
 .company-section {
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto 60px auto;
     text-align: center;
     
@@ -49,7 +49,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
-    color: var(--primary-color);
+    color: black;
 }
 
 
@@ -192,7 +192,7 @@
 .aboutusheadtext {
     font-size: 2rem;
     font-weight: 600;
-    color: white;
+    color: black;
     text-align: center;
     margin: 2rem 0;
     font-style: italic;
@@ -220,42 +220,41 @@
     bottom: -40px;
 }
 
+.about-us-text-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 90%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-us-text-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .about-us-text {
+    color: #000000;
     font-size: 1.1rem;
-    line-height: 1.8;
-    color: white;
-    margin: 1.5rem auto;
-    max-width: 900px;
-    padding: 0 20px;
-    text-align: justify;
-    animation: fadeIn 0.8s ease-in-out;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.about-us-text:first-of-type {
-    margin-top: 3rem;
+.about-us-text:last-child {
+    margin-bottom: 0;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .aboutusheadtext {
-        font-size: 1.5rem;
+    .about-us-text-container {
+        padding: 20px;
+        margin: 15px auto;
     }
-    
+
     .about-us-text {
         font-size: 1rem;
-        line-height: 1.6;
-        text-align: left;
+        margin-bottom: 15px;
     }
 }
 

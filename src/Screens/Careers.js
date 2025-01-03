@@ -27,21 +27,21 @@ const Careers = () => {
         return (
           <div className="careers-content">
             <div className="careers-hero">
-              <h1>Careers at Sidram  Technologies</h1>
+              <h1>Careers at EmpanelTech  Technologies</h1>
               <p>Join our team and be part of something extraordinary</p>
             </div>
 
             <section className="careers-main">
               <div className="intro-section">
                 <p>
-                  Sidram  is dedicated for improving the workplace experience and needs people who will add to our own workforce. We require IT professionals and business innovators who are willing to commit to a strong cooperative infrastructure, which is built on the basis of creativity and commitment. If you fit our description please submit your resume and we will surely contact within the next few business days. At Sidram , we put our client at first priority and ensure that our consultants get the opportunity to feel involved. We seek highly focused, committed and result-driven Consultants to work with us.
+                  EmpanelTech  is dedicated for improving the workplace experience and needs people who will add to our own workforce. We require IT professionals and business innovators who are willing to commit to a strong cooperative infrastructure, which is built on the basis of creativity and commitment. If you fit our description please submit your resume and we will surely contact within the next few business days. At EmpanelTech , we put our client at first priority and ensure that our consultants get the opportunity to feel involved. We seek highly focused, committed and result-driven Consultants to work with us.
                 </p>
               </div>
 
               <div className="guidance-section">
                 <h2>Career Guidance Services</h2>
                 <p>
-                  Here at Sidram , our team of experienced career advisors counsel the students from IT field to help find the right jobs for them. Through this service, we facilitate both the graduates and clients connect with each other.
+                  Here at EmpanelTech , our team of experienced career advisors counsel the students from IT field to help find the right jobs for them. Through this service, we facilitate both the graduates and clients connect with each other.
                 </p>
               </div>
 
@@ -71,13 +71,13 @@ const Careers = () => {
 
               <div className="contact-section">
                 <p>Now is the time to secure your career and future. Get in touch with us now!</p>
-                <p>Email us at: <a href="mailto:info@Sidram .com">info@Sidram .com</a></p>
+                <p>Email us at: <a href="mailto:info@EmpanelTech .com">info@EmpanelTech .com</a></p>
               </div>
 
               <div className="graduates-section">
                 <h2>Fresh College Graduates</h2>
                 <p>
-                  Irrespective of your location, Sidram  offers remarkable opportunities for graduates who want to step in the consulting career. As a growing company, we provide an excellent platform to graduates and student to explore and learn 'core' consulting skills.
+                  Irrespective of your location, EmpanelTech  offers remarkable opportunities for graduates who want to step in the consulting career. As a growing company, we provide an excellent platform to graduates and student to explore and learn 'core' consulting skills.
                 </p>
                 <p>
                   In an addition to consulting, we provide IT training to help students get real-life experience working on client projects. Our experienced consultants will help you to get an opportunity to play multiple roles, apply theoretical learning practically on live projects, and be part of a team that delivers excellent value to clients across the United States.
@@ -86,7 +86,7 @@ const Careers = () => {
 
               <div className="career-development">
                 <p>
-                  At Sidram , we ensure you that your success will be well-equipped with the skills and experience we provide. We have 'The Core' Consulting practice group for all campus hires, including graduates and undergraduates. As part of our 'The Core' group, you will have access to detailed training curriculum, career advisers and many more to shape up your career.
+                  At EmpanelTech , we ensure you that your success will be well-equipped with the skills and experience we provide. We have 'The Core' Consulting practice group for all campus hires, including graduates and undergraduates. As part of our 'The Core' group, you will have access to detailed training curriculum, career advisers and many more to shape up your career.
                 </p>
                 <p>
                   With our structured career and performance Management framework, we will work with you to create a custom learning and development plan. You can build upon your natural skills and academic qualification to develop additional skills and manage your career in the direction.
@@ -95,7 +95,7 @@ const Careers = () => {
 
               <div className="submit-resume-section">
                 <p>During our selection process, students get an opportunity to learn more about the work, and find out their potential. We only hire the best, so make sure you look at our openings:</p>
-                <button className="submit-button">Submit Resume and become a part of Sidram 's awesome team!</button>
+                <button className="submit-button">Submit Resume and become a part of EmpanelTech 's awesome team!</button>
               </div>
             </section>
           </div>
@@ -107,7 +107,7 @@ const Careers = () => {
             <section className="experienced-hire">
               <div className="intro-section">
                 <p>
-                  You've spent enough time in the industry, gaining experience and knowledge to share and apply that learning in today's fast paced environment to bring substantial difference. At Sidram , we hire seasoned professional like you, but first, you need to join our team as a member. So, sign up for a platform where your skills, knowledge and talent are valued and required.
+                  You've spent enough time in the industry, gaining experience and knowledge to share and apply that learning in today's fast paced environment to bring substantial difference. At EmpanelTech , we hire seasoned professional like you, but first, you need to join our team as a member. So, sign up for a platform where your skills, knowledge and talent are valued and required.
                 </p>
                 <p>
                   We offer you the opportunity to utilize all your learning, expertise and experience, while continuing to improve your skills and career. We indeed are not a large consulting centre, but we are reputable, and while we continue to grow, all team members have the opportunity to contribute to our success, and build their career path as well.
@@ -115,7 +115,7 @@ const Careers = () => {
               </div>
 
               <div className="requirements-section">
-                <h3>Sidram  is the right workplace for you in case you:</h3>
+                <h3>EmpanelTech  is the right workplace for you in case you:</h3>
                 <ul>
                   <li>Want drive scalable value and bring sustainable changes for your clients.</li>
                   <li>Want to speed up your career while gaining experience.</li>
@@ -130,7 +130,7 @@ const Careers = () => {
               <div className="consulting-section">
                 <h3>Management Consulting</h3>
                 <p>
-                  At Sidram , our skilled management consultants facilitate business process, and have extensive industry and functional experience to help clients drive measurable results. No matter whether it is improving operational efficiency, designing a new organizational structure or implement new technology, our management consultants are here to help!
+                  At EmpanelTech , our skilled management consultants facilitate business process, and have extensive industry and functional experience to help clients drive measurable results. No matter whether it is improving operational efficiency, designing a new organizational structure or implement new technology, our management consultants are here to help!
                 </p>
 
                 <h3>Technology Consulting</h3>
@@ -140,7 +140,7 @@ const Careers = () => {
               </div>
 
               <div className="culture-section">
-                <h3>Culture @ Sidram </h3>
+                <h3>Culture @ EmpanelTech </h3>
                 <p>
                   The first and foremost reason behind why our team members and clients stay with us is our unique culture. We uphold a perfect blend of energy and innovation of a startup with a vision and infrastructure of Fortune Global 500 company. Innovation is our culture, and we always encourage professionals who think out of the box. We firmly believe in taking good care of our clients, each other, and the healthy environment in which we work.
                 </p>
@@ -171,7 +171,7 @@ const Careers = () => {
 
               <div className="submit-resume-section">
                 <button className="submit-button">
-                  Submit Resume and become a part of Sidram 's awesome team!
+                  Submit Resume and become a part of EmpanelTech 's awesome team!
                 </button>
               </div>
             </section>

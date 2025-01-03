@@ -79,27 +79,29 @@ export default function SalesforceServices() {
     <div className="salesforce-services">
       <div className="page-header">
         <h1 className="main-title">Salesforce Services</h1>
-        </div>
+      </div>
       
       <div className="services-container">
         {services.map((service, index) => (
-          <div key={service.id} className="service-card">
-            <div className="card-header">
-              <h2 className="service-main-title">{service.mainTitle}</h2>
-              <p className="service-main-subtitle">{service.mainTitleSubheading}</p>
-            </div>
-            <div className={`service-content ${index % 2 === 1 ? 'reverse' : ''}`}>
-              <div className="service-image-container">
-                <img src={service.image} alt={service.mainTitle} className="service-image" />
+          <div key={service.id} className="service-section">
+            <div className="service-container">
+              <div className="service-header">
+                <h2 className="service-title">{service.mainTitle}</h2>
+                <p className="service-subtitle">{service.mainTitleSubheading}</p>
               </div>
-              <div className="service-text-content">
-                <h3 className="service-heading">{service.heading}</h3>
-                <h4 className="service-subheading">{service.subheading}</h4>
-                <ul className="service-description-list">
-                  {service.description.map((point, index) => (
-                    <li key={index} className="service-description-item">{point}</li>
-                  ))}
-                </ul>
+              <div className={`service-content ${index % 2 === 1 ? 'reverse' : ''}`}>
+                <div className="service-text">
+                  <h3 className="service-heading">{service.heading}</h3>
+                  <p className="service-subheading">{service.subheading}</p>
+                  <ul className="service-list">
+                    {service.description.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="service-image">
+                  <img src={service.image} alt={service.mainTitle} />
+                </div>
               </div>
             </div>
           </div>

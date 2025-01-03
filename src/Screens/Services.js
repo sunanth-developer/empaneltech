@@ -6,7 +6,7 @@ const Services = () => {
   const services = [
     {
       title: "Utility Services",
-      content: `At Sidram , we empower utility service providers, businesses, and individuals with advanced tools and technology to enhance energy consumption visibility. Our solutions are designed to promote energy conservation, contributing to the nation's carbon neutrality goals. We offer utility solutions in the following sectors:`,
+      content: `At Empaneltech , we empower utility service providers, businesses, and individuals with advanced tools and technology to enhance energy consumption visibility. Our solutions are designed to promote energy conservation, contributing to the nation's carbon neutrality goals. We offer utility solutions in the following sectors:`,
       list: ["Electricity", "Water", "Gas"],
       image: "https://www.vert-age.com/media/img/Utility-Services.png"
     },
@@ -38,7 +38,7 @@ const Services = () => {
     },
     {
       title: "Custom Application Development",
-      content: `Sidram  offers application development services to empower your business with highly functional, user-friendly solutions. We specialize in developing applications across platforms, including Java, .Net, iOS, and Android.
+      content: `Empaneltech  offers application development services to empower your business with highly functional, user-friendly solutions. We specialize in developing applications across platforms, including Java, .Net, iOS, and Android.
 
 Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our vision, clarity, and expertise in delivering exceptional quality and innovative solutions.`,
       list: ["Java", ".Net", "iOS", "Android"],
@@ -51,7 +51,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
         sections: [
           {
             title: "Business Process Outsourcing (BPO)",
-            content: "At Sidram  Tech, our aim is to make the company function smoother for our clients at affordable costs. Through our proficient Business Process Outsourcing (BPO), we help you in reducing the costs along with increasing shareholder value and improving the service quality while you focus on expanding your business for a long-term growth."
+            content: "At Empaneltech  Tech, our aim is to make the company function smoother for our clients at affordable costs. Through our proficient Business Process Outsourcing (BPO), we help you in reducing the costs along with increasing shareholder value and improving the service quality while you focus on expanding your business for a long-term growth."
           },
           {
             title: "Recruitment Process Outsourcing (RPO)",
@@ -68,7 +68,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
     },
     {
       title: "Quality Assurance & Testing Services",
-      content: "At Sidram , we understand that maintaining quality is paramount, leaving no room for errors. Robust testing is essential, and we provide comprehensive quality assurance and testing services to help businesses worldwide save time and effort.",
+      content: "At Empaneltech , we understand that maintaining quality is paramount, leaving no room for errors. Robust testing is essential, and we provide comprehensive quality assurance and testing services to help businesses worldwide save time and effort.",
       features: {
         sections: [
           {
@@ -83,7 +83,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
             ]
           },
           {
-            title: "Benefits of Choosing Sidram ",
+            title: "Benefits of Choosing Empaneltech ",
             list: [
               "Cost-Effective Global Delivery Model: 24/7 support for seamless operations",
               "Certified Test Professionals: Accredited in ISTQB, SCRUM, ISEB, CSQA, CSTE, and HP certifications",
@@ -158,7 +158,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
                     ))}
                   </ul>
                   
-                  <h3>Why Choose Sidram ?</h3>
+                  <h3>Why Choose Empaneltech ?</h3>
                   <ul>
                     {service.features.benefits.map((item, i) => (
                       <li key={i}>{item}</li>

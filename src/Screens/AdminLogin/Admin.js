@@ -201,7 +201,7 @@ const Admin = () => {
 
   // Handle Login
   const handleLogin = (loginData) => {
-    if (loginData.email === 'admin@Sidram .com' && loginData.password === 'admin123') {
+    if (loginData.email === 'admin@Empaneltech .com' && loginData.password === 'admin123') {
       setIsLoggedIn(true);
       localStorage.setItem('isAdminLoggedIn', 'true');
     } else {

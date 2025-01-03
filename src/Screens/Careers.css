@@ -3,7 +3,15 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
+p{
+  color:black
+}
+.quote-section h2{
+  color:black
+}
+.guidance-section p{
+  line-height: 1.8;
+}
 /* Create a grid container for job cards */
 .jobs-grid {
   display: grid;
@@ -111,7 +119,7 @@
   gap: 10px;
   margin-top: auto; /* Push to bottom of card */
   width: 100%;
-  padding: 20px 0; /* Add some padding top and bottom */
+  padding: 20px 0;/* Add some padding top and bottom */
 }
 
 /* Common button styles */
@@ -130,7 +138,7 @@
 
 /* Apply Now button */
 .apply-button {
-  background-color: black !important;
+ 
   color: white !important;
   border: none;
 }
@@ -184,21 +192,19 @@
 }
 
 .careers-page {
-  color: white;
-  align-items: center;
   margin-top: 0;
   padding-top: 0;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 .careers-content {
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #ffffff;
+  color: #000000;
   max-width: 80%;
   margin: 0 auto;
   padding: 20px;
-  color: white;
-  margin-top: 0;
-  padding-top: 0;
-  background-color: #000000;
 }
 
 .career-content h2 {
@@ -223,7 +229,7 @@
 }
 
 .quote-section {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(119, 119, 119, 0.1);
   padding: 40px 30px;
   margin: 40px 0;
   border-left: 4px solid white;
@@ -258,17 +264,17 @@
 }
 
 .contact-section {
-  background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 8px;
   margin: 40px 0;
   text-align: center;
   color: white;
   line-height: 1.8;
+  border-color: #000000 !important;
 }
 
 .contact-section a {
-  color: white;
+  color: black;
   text-decoration: none;
   font-weight: 600;
 }
@@ -516,26 +522,42 @@
     margin: 10px 0;
 }
 
-/* Update all list items to be white */
+/* Update all list items to be black */
 .career-content li,
 .job-requirements li,
 .challenges-list li,
 .requirements-section li,
 .positions-section li {
-    color: white !important; /* Using !important to override any other styles */
+    color: #000000 !important; /* Using !important to override any other styles */
     line-height: 1.8;
+    list-style: none; /* Remove default bullets */
+    position: relative;
+    padding-left: 20px; /* Space for custom bullet */
 }
 
-/* Update all bullet points to be white */
+/* Single bullet point styling */
 .job-requirements li::before,
 .challenges-list li::before,
 .requirements-section li::before,
 .positions-section li::before {
     content: "•";
-    color: white;
+    color: #000000;
     position: absolute;
     left: 0;
     font-size: 1.2em;
+}
+
+/* Job card specific list styling */
+.job-card .job-requirements {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.job-card .job-requirements li {
+    color: #000000 !important;
+    margin-bottom: 8px;
+    text-align: left;
+    list-style: none;
 }
 
 .apply-buttons {
@@ -611,11 +633,13 @@
   color: #dc3545;
 }
 
-.careers-title {
+.careers-title,
+.current-openings h2 {
   text-align: center;
-  color: white;
+  color: #000000;
   margin-bottom: 40px;
   font-size: 2.5rem;
+  width: 100%;
 }
 
 /* Ensure the list items stay black even after visited */
@@ -661,7 +685,7 @@
 }
 
 .job-card .job-requirements li {
-  color: black !important;
+  color: #000000 !important;
   margin-bottom: 8px;
   text-align: left;
   line-height: 1.5;
@@ -669,7 +693,7 @@
 
 /* Override any existing styles */
 .job-card * {
-  color: black !important;
+  color: #000000 !important;
 }
 
 /* Keep button text colors as they are */
@@ -781,42 +805,42 @@
 .consulting-section,
 .culture-section,
 .career-cta-section {
-  margin: 40px 0;
-  padding: 30px 0; /* Removed horizontal padding */
+    margin: 40px 0;
+    padding: 30px 0; /* Removed horizontal padding */
 }
 
 .link-button {
-  background: none;
-  border: 2px solid white;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font: inherit;
-  transition: all 0.3s ease;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    transition: all 0.3s ease;
 }
 
 .link-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .experienced-hire h3 {
-  margin: 30px 0 20px;
-  font-size: 1.8rem;
-  color: white;
+    margin: 30px 0 20px;
+    font-size: 1.8rem;
+    color: white;
 }
 
 .experienced-hire p {
-  line-height: 1.8;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 /* Adjust the body padding to exactly match navbar height */
 body {
   margin: 0;
   padding-top: 60px; /* Exactly matches navbar height */
-  background-color: #000000; /* Or your desired background color */
+  background-color: #ffffff;
 }
 
 /* Remove any extra space from sections */
@@ -825,5 +849,134 @@ body {
 .current-openings {
   margin-top: 0;
   padding-top: 20px;
-  background-color: #000000;
+  background-color: #ffffff;
+}
+
+.careers-hero h1,
+.careers-hero p,
+.requirements-section h3,
+.requirements-section p,
+.requirements-section li,
+.consulting-section h3,
+.consulting-section p,
+.culture-section h3,
+.culture-section p,
+.positions-section h3,
+.positions-section p,
+.positions-section li {
+  color: #000000;
+}
+
+/* Style for lists */
+.requirements-section ul,
+.positions-section ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.requirements-section li::before,
+.positions-section li::before {
+  content: "•";
+  color: #000000;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Button styles */
+.submit-button,
+.link-button,
+.apply-button,
+.linkedin-apply-button {
+  background-color: #ffffff;
+  color: #000000 !important; /* Force black text */
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.submit-button:hover,
+.link-button:hover,
+.apply-button:hover,
+.linkedin-apply-button:hover {
+  background-color: #f0f0f0;
+  color: #000000 !important;
+  transform: translateY(-2px);
+}
+
+/* Tab buttons */
+.tab-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+}
+
+.tab-button:hover {
+  background-color: #f0f0f0;
+  color: #000000;
+}
+
+.tab-button.active {
+  background-color: #f0f0f0;
+  color: #000000;
+  font-weight: 600;
+}
+.solution-section p{
+  line-height: 2;
+}
+.graduates-section p{
+  line-height: 2;
+}
+.career-development p{
+  line-height: 2;
+}
+/* Style for intro section text */
+.intro-section {
+  color: #000000;
+  line-height: 1.8;
+}
+
+.intro-section p {
+  color: #000000 !important;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+/* Ensure all text in experienced hire section is black */
+.experienced-hire .intro-section p {
+  color: #000000 !important;
+}
+
+/* Additional styles to ensure text stays black */
+.careers-content .intro-section p,
+.experienced-hire .intro-section p {
+  color: #000000 !important;
+}
+
+/* Ensure all sections have white background */
+.careers-hero,
+.experienced-hire,
+.current-openings {
+  margin-top: 0;
+  padding-top: 20px;
+  background-color: #ffffff;
+}
+
+/* Remove any background colors that might be interfering */
+.navbar::after {
+  display: none;
+}
+
+.current-openings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
 }
