@@ -15,7 +15,7 @@ const Navbar = () => {
   
 <nav className="navbar">
       <div className="logo">
-       <Link to="/" onClick={toggleMenu}> <img src="http://sidramtech.com/assets/img/logo/logo.png" alt="Company Logo" /></Link>
+       <Link to="/" onClick={toggleMenu}> <img src="http://Sidram tech.com/assets/img/logo/logo.png" alt="Company Logo" /></Link>
       </div>
       <button className={`menu-toggle ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <span className="bar"></span>

@@ -9,11 +9,11 @@ const Footer = () => {
       <div className="footer-content">
         {/* Company Description */}
         <div className="footer-section">
-          <h3>Sidram Technologies</h3>
+          <h3>Sidram  Technologies</h3>
           <p>
-            Sidramthinks long-term! We serve clients with the goal to create 
+            Sidram thinks long-term! We serve clients with the goal to create 
             partnerships which is why it is our fundamental focus to avoid mistakes by all 
-            costs and exceed client goals! To Sidram, all our clients are equal.
+            costs and exceed client goals! To Sidram , all our clients are equal.
           </p>
           <div className="social-links">
             <h4>Follow us</h4>
@@ -53,7 +53,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Sidram. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Sidram . All rights reserved.</p>
       </div>
     </footer>
   );
