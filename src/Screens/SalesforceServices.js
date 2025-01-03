@@ -1,5 +1,10 @@
 import React from 'react';
 import './SalesforceServices.css';
+import customer from '../assets/Customer-Support.jpg'
+import marketing from '../assets/marketing.jpg'
+import sales from '../assets/sales.jpg'
+import platform from '../assets/platform-development.jpg'
+import appexchange from '../assets/app_exchange.jpg'
 
 export default function SalesforceServices() {
   const services = [
@@ -7,7 +12,7 @@ export default function SalesforceServices() {
       id: 1,
       mainTitle: "MARKETING & PR",
       mainTitleSubheading: "CONNECT WITH YOUR AUDIENCE AND FOSTER A THRIVING COMMUNITY",
-      image: "https://www.intandemcommunications.co.uk/wp-content/uploads/2019/08/What-is-marketing.jpg",
+      image: marketing,
       heading: "MARKETING & PR IMPLMENTATIONS",
       subheading: "We go beyond the basics of marketing and PR tools, empowering you to harness the cloud for deeper customer insights and impactful messaging. Discover how to leverage cloud technology to connect with your audience, nurture leads, and foster meaningful relationships.",
       description: [
@@ -21,7 +26,7 @@ export default function SalesforceServices() {
       id: 2,
       mainTitle: "SALES MANAGEMENT",
       mainTitleSubheading: "Streamline Your Workflow and Empower Your Sales Team",
-      image: "https://www.mbaskool.com/2019_images/stories/jul_images/sales_management.jpg",
+      image: sales,
       heading: "SALES CLOUD IMPLEMENTATION",
       subheading: "Maximize the potential of Sales Cloud with our expertise. We understand the dynamic sales environment and how to integrate process, technology, and mobility to meet the evolving demands of your sales organization.",
       description: [
@@ -35,7 +40,7 @@ export default function SalesforceServices() {
       id: 3,
       mainTitle: "CUSTOMER SERVICE",
       mainTitleSubheading: "Revolutionize Customer Experience and Set a New Standard",
-      image: "https://simplycontact.com/wp-content/uploads/2023/03/Customer-Support-Outsourcing-Department-1024x576.png",
+      image: customer,
       heading: "SERVICE CLOUD IMPLEMENTATION",
       subheading: "Transform your customer service into a proactive, revenue-generating powerhouse. We align processes and implement technology to elevate customer service from a basic support function to a key driver of customer satisfaction and business growth.",
       description: [
@@ -49,7 +54,7 @@ export default function SalesforceServices() {
       id: 4,
       mainTitle: "PLATFORM DEVELOPMENT",
       mainTitleSubheading: "Enrich and Customize Your CRM with Tailored Adaptations and Integration Services",
-      image: "https://www.koombea.com/wp-content/uploads/2021/12/platform-development-banner@2x.webp",
+      image: platform,
       heading: "OPERATIONAL EFFICIENCY WITH FORCE.COM DEVELOPMENT",
       subheading: "Boost efficiency and streamline your business operations with tailored Force.com solutions. Our expert training and development team can design a customized platform perfectly aligned with your business needs, ensuring you get the most out of Force.com while eliminating unnecessary features.",
       description: [
@@ -64,7 +69,7 @@ export default function SalesforceServices() {
       id: 5,
       mainTitle: "",
       mainTitleSubheading: "",
-      image: "https://dzrge5zzbsh6q.cloudfront.net/understanding-the-industry-what-is-cross-platform-development-1024x614.jpg",
+      image: appexchange,
       heading: "APP EXCHANGE & CUSTOM APP",
       subheading: "Unlock New Business Possibilities by Leveraging the Creative Potential of AppExchange  Discover how to tap into the vast opportunities within the AppExchange ecosystem to expand and enhance your business in ways you never imagined. We’ll guide you on how to use and create custom apps to:",
       description: [

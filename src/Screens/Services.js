@@ -1,19 +1,24 @@
 import React from 'react';
 import './Services.css';
 import { Link } from 'react-router-dom';
-
+import utility from '../assets/Utility-Services.jpg'
+import business from '../assets/BusinessServices.jpg'
+import staff from '../assets/Staff-Augmentation.jpg'
+import custom from '../assets/Custom-Application-Development.jpg'
+import outsourcing from '../assets/Outsourcing1.jpg'
+import quality from '../assets/qa.jpg'
 const Services = () => {
   const services = [
     {
       title: "Utility Services",
       content: `At Sidram , we empower utility service providers, businesses, and individuals with advanced tools and technology to enhance energy consumption visibility. Our solutions are designed to promote energy conservation, contributing to the nation's carbon neutrality goals. We offer utility solutions in the following sectors:`,
       list: ["Electricity", "Water", "Gas"],
-      image: "https://www.vert-age.com/media/img/Utility-Services.png"
+      image: utility
     },
     {
       title: "Business Services",
       content: `Rebates are often underestimated by companies and seen as a complex process by consumers. Our Instant Rebate Solutions simplify this process, making it seamless and immediate at the point of purchase. This enables companies to focus on sales promotion, revenue growth, and collecting valuable customer data for future marketing.`,
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/99/BusinessServices3.png"
+      image: business
     },
     {
       title: "IT Staff Augmentation",
@@ -33,7 +38,7 @@ const Services = () => {
           "Contract Placement: Hire temporary or project-based resources"
         ]
       },
-      image: "https://fortitude-nicsa.com/wp-content/uploads/2023/11/Staff-Augmentation-2.jpg",
+      image:staff,
       contact: "678-606-9026 EXT 404"
     },
     {
@@ -42,7 +47,7 @@ const Services = () => {
 
 Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our vision, clarity, and expertise in delivering exceptional quality and innovative solutions.`,
       list: ["Java", ".Net", "iOS", "Android"],
-      image: "https://geeksforless.com/wp-content/uploads/2023/08/Custom-Application-Development.jpg"
+      image: custom
     },
     {
       title: "Outsourcing",
@@ -64,7 +69,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
         ],
         location: "We are located in the heart of HiTech City MindSpace adjacent to Westin Hotel, CTS e.t.c in a spacious professional office with full corporate facilities."
       },
-      image: "https://bairesdev.mo.cloudinary.net/blog/2023/12/IT-Outsourcing-Services.jpg"
+      image: outsourcing
     },
     {
       title: "Quality Assurance & Testing Services",
@@ -94,7 +99,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
         ],
         additionalContent: "Our QA and testing services uniquely combine quality with cost-effectiveness, incorporating value-driven strategies, streamlined processes, and robust governance to deliver innovative solutions that exceed client expectations."
       },
-      image: "https://www.beyondkey.com/BkNew/images/QAservices/qa-service-banner.jpg",
+      image: quality,
       contact: "678-606-9026 EXT 404"
     }
   ];

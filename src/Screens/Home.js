@@ -2,8 +2,9 @@ import React from 'react';
 import Header from './Header';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
-
-
+import customer from '../assets/Customer-Support.jpg'
+import marketing from '../assets/marketing.jpg'
+import sales from '../assets/sales.jpg'
 
 const Home = () => {
   const navigate = useNavigate();
@@ -98,7 +99,7 @@ const Home = () => {
     <div className="blog-cards-container">
     <div className="blog-card">
         <img 
-            src="https://www.intandemcommunications.co.uk/wp-content/uploads/2019/08/What-is-marketing.jpg" 
+            src={marketing} 
             alt="Marketing" 
             className="blog-card-image" 
         />
@@ -113,7 +114,7 @@ const Home = () => {
 
     <div className="blog-card">
         <img 
-            src="https://www.mbaskool.com/2019_images/stories/jul_images/sales_management.jpg" 
+            src={sales} 
             alt="Sales Management" 
             className="blog-card-image" 
         />
@@ -128,7 +129,7 @@ const Home = () => {
 
     <div className="blog-card">
         <img 
-            src="https://simplycontact.com/wp-content/uploads/2023/03/Customer-Support-Outsourcing-Department-1024x576.png" 
+            src={customer} 
             alt="Customer Support" 
             className="blog-card-image" 
         />
