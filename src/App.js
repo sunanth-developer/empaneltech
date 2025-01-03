@@ -11,6 +11,7 @@ import SalesforceServices from './Screens/SalesforceServices';
 import Careers from './Screens/Careers';
 import Services from './Screens/Services';
 import Admin from './Screens/AdminLogin/Admin';
+
 function App() {
   return (
     <Router>
@@ -21,11 +22,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-             <Route path="/contactus" element={<Contactus />} />
-             <Route path="/salesforce" element={<SalesforceServices />} />
-             <Route path="/careers" element={<Careers />} />
-               <Route path="/Services" element={<Services />} />
-               <Route path="/Admin" element={<Admin />} />
+            <Route path="/contactus" element={<Contactus />} />
+            <Route path="/salesforce" element={<SalesforceServices />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/Services" element={<Services />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
