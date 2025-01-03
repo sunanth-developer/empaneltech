@@ -42,11 +42,11 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Services</h3>
           <ul>
-            <li><Link to="/services/utility">Utility Services</Link></li>
-            <li><Link to="/services/business">Business Services</Link></li>
-            <li><Link to="/services/staffing">IT Staff Augmentation</Link></li>
-            <li><Link to="/services/outsourcing">Outsourcing</Link></li>
-            <li><Link to="/services/qa">Quality Assurance</Link></li>
+            <li><Link to="/services">Utility Services</Link></li>
+            <li><Link to="/services">Business Services</Link></li>
+            <li><Link to="/services">IT Staff Augmentation</Link></li>
+            <li><Link to="/services">Outsourcing</Link></li>
+            <li><Link to="/services">Quality Assurance</Link></li>
           </ul>
         </div>
       </div>
