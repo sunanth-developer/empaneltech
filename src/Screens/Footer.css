@@ -1,110 +1,306 @@
 .footer {
-    background: #000000;
-    color: white;
-    padding: 50px 0 20px;
-    margin-top: 50px;
+    background-image: url('https://swisscognitive.ch/wp-content/uploads/2023/12/AI-And-Machine-Learning-In-Marketing-Analytics-A-Revenue-Driven-Approach.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
-    border-top: 2px solid white;
+    color: #fff;
+    padding-top: 2rem;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Enhance the overlay for better text readability with parallax */
+.footer::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(18, 18, 18, 0.85);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Ensure content stays above parallax background */
+.footer > * {
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    padding: 0 20px;
+    gap: 4rem;
+    margin-top: -2rem;
 }
 
 .footer-section {
-    margin-bottom: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .footer-section h3 {
-    color: white;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    text-align: center;
+    color: #4a90e2;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: #4a90e2;
 }
 
 .footer-section p {
-    color: white;
     line-height: 1.8;
-    margin-bottom: 20px;
-    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
 }
 
 .footer-section ul li {
-    margin-bottom: 12px;
-    color: white;
+    margin-bottom: 0.8rem;
 }
 
 .footer-section ul li a {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .footer-section ul li a:hover {
-    opacity: 0.8;
-    color: white;
-}
-
-.social-links {
-    text-align: center;
+    color: #4a90e2;
+    transform: translateX(5px);
 }
 
 .social-links h4 {
-    color: white;
-    margin-bottom: 15px;
+    color: #4a90e2;
+    margin-bottom: 1rem;
 }
 
 .social-icons {
     display: flex;
-    gap: 15px;
-    justify-content: center;
+    gap: 1rem;
 }
 
 .social-icons a {
     color: white;
-    font-size: 1.5rem;
-    transition: opacity 0.3s ease;
+    background: rgba(74, 144, 226, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(74, 144, 226, 0.3);
 }
 
 .social-icons a:hover {
-    opacity: 0.8;
-    color: white;
+    background: #4a90e2;
+    transform: translateY(-3px);
 }
 
 .footer-bottom {
+    position: relative;
+    z-index: 2;
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
+    padding: 2rem;
+    margin-top: 4rem;
+    background: rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: white !important;
 }
+
 .footer-bottom p {
-    color: white !important;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
 }
+
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media (max-width: 968px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-section:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 2rem;
     }
+    
+    .footer {
+        background-attachment: scroll;
+    }
+    
+    .footer::before {
+        position: absolute;
+    }
+}
 
-    .footer-section {
-        text-align: center;
-    }
+/* Stats Banner Styles */
+.stats-banner {
+  position: relative;
+  width: 100%;
+  background-image: url('https://images.unsplash.com/photo-1557683311-eac922347aa1?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
+  margin-bottom: 4rem;
+  z-index: 2;
+}
 
-    .social-icons {
-        justify-content: center;
-    }
+.stats-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+.stats-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+  background: rgba(74, 144, 226, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-10px);
+  background: rgba(74, 144, 226, 0.2);
+  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.1);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: countUp 2s forwards;
+  animation-delay: 0.5s;
+}
+
+.stat-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design for Stats Banner */
+@media (max-width: 968px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.clickable:hover {
+  transform: translateY(-5px);
+}
+
+.stat-item.clickable .stat-text {
+  color: #4a90e2;
 }

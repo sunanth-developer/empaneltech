@@ -39,17 +39,38 @@
 }
 
 .company-section {
-    max-width: 80%;
-    margin: 0 auto 60px auto;
-    text-align: center;
-    
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Lighter overlay for better text visibility */
+.company-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.589),
+        rgba(0, 0, 0, 0.454)
+    );
+    z-index: 1;
 }
 
 .company-section h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2em;
     margin-bottom: 20px;
-    color: black;
+    color: white;
 }
 
 
@@ -192,22 +213,23 @@
 .aboutusheadtext {
     font-size: 2rem;
     font-weight: 600;
-    color: black;
+    color: white;
     text-align: center;
     margin: 2rem 0;
     font-style: italic;
     line-height: 1.4;
     position: relative;
     padding: 0 20px;
+    z-index: 2;
 }
 
 .aboutusheadtext::before,
 .aboutusheadtext::after {
     content: '"';
     font-size: 3rem;
-    color: #3498db;
+    color: #4a90e2;
     position: absolute;
-    opacity: 0.3;
+    opacity: 0.8;
 }
 
 .aboutusheadtext::before {
@@ -220,42 +242,39 @@
     bottom: -40px;
 }
 
-.about-us-text-container {
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 90%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.aboutusheadtext {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.about-us-text-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.about-us-text-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .about-us-text {
-    color: #000000;
     font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: justify;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 400;
+    letter-spacing: 0.3px;
 }
 
-.about-us-text:last-child {
-    margin-bottom: 0;
-}
-
-@media screen and (max-width: 768px) {
-    .about-us-text-container {
-        padding: 20px;
-        margin: 15px auto;
-    }
-
-    .about-us-text {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
+.about-us-text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .info-cards-container {
@@ -267,8 +286,8 @@
 }
 
 .info-card {
-    width: 90%;
-    background: white;
+    width: 100%;
+    background: black;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -293,17 +312,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: white;
 }
 
 .info-card-title {
     text-align: center;
-    color: #2c3e50;
+    color: white;
     font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
 .info-card-text {
-    color: #555;
+    color: white;
     line-height: 1.6;
     font-size: 1.1rem;
 }
@@ -322,5 +342,18 @@
 
     .info-card-content {
         width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .company-section {
+        padding: 3rem 1rem;
+        background-attachment: scroll; /* Removes parallax on mobile for better performance */
+    }
+
+    .about-us-text {
+        padding: 1.5rem;
+        font-size: 1rem;
     }
 }

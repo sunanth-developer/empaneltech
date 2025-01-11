@@ -3,10 +3,12 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../Firebase';
 import { FaLinkedin } from 'react-icons/fa';
 import './Careers.css';
+import { useLocation } from 'react-router-dom';
 
 const Careers = () => {
   const [jobs, setJobs] = useState([]);
   const [activeTab, setActiveTab] = useState('careers');
+  const location = useLocation();
 
   useEffect(() => {
     const fetchJobs = async () => {
@@ -20,6 +22,16 @@ const Careers = () => {
 
     fetchJobs();
   }, []);
+
+  useEffect(() => {
+    if (location.state?.openJobSection) {
+      // Find the job openings section
+      const jobSection = document.getElementById('job-openings');
+      if (jobSection) {
+        jobSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   const renderContent = () => {
     switch(activeTab) {
@@ -180,7 +192,7 @@ const Careers = () => {
 
       case 'openings':
         return (
-          <section className="current-openings">
+          <section className="current-openings" style={{backgroundColor: 'black'}}>
             <h2>Current Openings</h2>
             <div className="jobs-grid">
               {jobs.length === 0 ? (

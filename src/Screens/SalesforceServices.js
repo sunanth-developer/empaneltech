@@ -9,7 +9,7 @@ import appexchange from '../assets/app_exchange.jpg'
 export default function SalesforceServices() {
   const services = [
     {
-      id: 1,
+      id: 'marketing-pr',
       mainTitle: "MARKETING & PR",
       mainTitleSubheading: "CONNECT WITH YOUR AUDIENCE AND FOSTER A THRIVING COMMUNITY",
       image: marketing,
@@ -23,7 +23,7 @@ export default function SalesforceServices() {
       ]
     },
     {
-      id: 2,
+      id: 'sales-management',
       mainTitle: "SALES MANAGEMENT",
       mainTitleSubheading: "Streamline Your Workflow and Empower Your Sales Team",
       image: sales,
@@ -37,7 +37,7 @@ export default function SalesforceServices() {
       ]
     },
     {
-      id: 3,
+      id: 'customer-service',
       mainTitle: "CUSTOMER SERVICE",
       mainTitleSubheading: "Revolutionize Customer Experience and Set a New Standard",
       image: customer,
@@ -51,7 +51,7 @@ export default function SalesforceServices() {
       ]
     },
     {
-      id: 4,
+      id: 'platform-development',
       mainTitle: "PLATFORM DEVELOPMENT",
       mainTitleSubheading: "Enrich and Customize Your CRM with Tailored Adaptations and Integration Services",
       image: platform,
@@ -66,12 +66,12 @@ export default function SalesforceServices() {
       ]
     },
     {
-      id: 5,
-      mainTitle: "",
+      id: 'app-exchange',
+      mainTitle: "APP EXCHANGE & CUSTOM APP",
       mainTitleSubheading: "",
       image: appexchange,
       heading: "APP EXCHANGE & CUSTOM APP",
-      subheading: "Unlock New Business Possibilities by Leveraging the Creative Potential of AppExchange  Discover how to tap into the vast opportunities within the AppExchange ecosystem to expand and enhance your business in ways you never imagined. We’ll guide you on how to use and create custom apps to:",
+      subheading: "Unlock New Business Possibilities by Leveraging the Creative Potential of AppExchange  Discover how to tap into the vast opportunities within the AppExchange ecosystem to expand and enhance your business in ways you never imagined. We'll guide you on how to use and create custom apps to:",
       description: [
         "Unlock new channels and audiences for greater exposure.",
         "Enhance flexibility and access by enabling mobile solutions.",
@@ -82,29 +82,29 @@ export default function SalesforceServices() {
 
   return (
     <div className="salesforce-services">
-      <div className="page-header">
+      <div className="page-header" id="salesforce-services-header">
         <h1 className="main-title">Salesforce Services</h1>
       </div>
       
       <div className="services-container">
         {services.map((service, index) => (
-          <div key={service.id} className="service-section">
+          <div key={service.id} id={service.id} className="service-section">
             <div className="service-container">
-              <div className="service-header">
-                <h2 className="service-title">{service.mainTitle}</h2>
-                <p className="service-subtitle">{service.mainTitleSubheading}</p>
+              <div className="service-header" id={`${service.id}-header`}>
+                <h2 className="service-title" id={`${service.id}-title`}>{service.mainTitle}</h2>
+                <p className="service-subtitle" id={`${service.id}-subtitle`}>{service.mainTitleSubheading}</p>
               </div>
-              <div className={`service-content ${index % 2 === 1 ? 'reverse' : ''}`}>
-                <div className="service-text">
-                  <h3 className="service-heading">{service.heading}</h3>
-                  <p className="service-subheading">{service.subheading}</p>
-                  <ul className="service-list">
+              <div className={`service-content ${index % 2 === 1 ? 'reverse' : ''}`} id={`${service.id}-content`}>
+                <div className="service-text" id={`${service.id}-text`}>
+                  <h3 className="service-heading" id={`${service.id}-heading`}>{service.heading}</h3>
+                  <p className="service-subheading" id={`${service.id}-subheading`}>{service.subheading}</p>
+                  <ul className="service-list" id={`${service.id}-list`}>
                     {service.description.map((point, idx) => (
-                      <li key={idx}>{point}</li>
+                      <li key={idx} id={`${service.id}-point-${idx + 1}`}>{point}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="service-image">
+                <div className="service-image" id={`${service.id}-image`}>
                   <img src={service.image} alt={service.mainTitle} />
                 </div>
               </div>

@@ -1,162 +1,206 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
-import customer from '../assets/Customer-Support.jpg'
-import marketing from '../assets/marketing.jpg'
-import sales from '../assets/sales.jpg'
+import { FaSeedling, FaUsers, FaHandHoldingHeart, FaShieldAlt, FaIndustry, 
+         FaHeartbeat, FaUserTie, FaCar, FaCloudSun, FaChartLine, 
+         FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { IoMdGitNetwork } from 'react-icons/io';
+
+const industryCards = [
+  { icon: <FaSeedling />, title: 'Agriculture' },
+  { icon: <FaUsers />, title: 'Customer Retention/Service' },
+  { icon: <FaHandHoldingHeart />, title: 'Charitable Contributions' },
+  { icon: <FaShieldAlt />, title: 'Insurance' },
+  { icon: <FaIndustry />, title: 'Manufacturing and IoT' },
+  { icon: <FaHeartbeat />, title: 'Healthcare/Medical' },
+  { icon: <FaUserTie />, title: 'Human Capital Management' },
+  { icon: <FaCar />, title: 'Automotive' },
+  { icon: <FaCloudSun />, title: 'Climate Change' },
+  { icon: <FaChartLine />, title: 'Fintech' },
+  { icon: <FaShoppingCart />, title: 'Retail' },
+  { icon: <IoMdGitNetwork />, title: 'Supply Chain' }
+];
 
 const Home = () => {
-  const navigate = useNavigate();
+  const scrollRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleServiceClick = () => {
-    navigate('/services');
-  };
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    const cardWidth = container.querySelector('.industry-card').offsetWidth;
+    const scrollAmount = cardWidth + 32; // card width + gap
 
-  const handleSalesforceClick = () => {
-    navigate('/salesforce');
-  };
-
-  const products = [
-    {
-      title: "Water Gold",
-      description: "Smart water management solution"
-    },
-    {
-      title: "CRM",
-      description: "Customer relationship management system"
-    },
-    {
-      title: "HCG-Smart Technology",
-      description: "Healthcare management solution"
-    },
-    {
-      title: "Rebate Instant",
-      description: "Instant rebate processing system"
+    if (container) {
+      container.scrollTo({
+        left: container.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount),
+        behavior: 'smooth'
+      });
     }
-  ];
+  };
+
+  // Handle drag to scroll
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Touch events for mobile
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    let scrollInterval;
+
+    const startAutoScroll = () => {
+      scrollInterval = setInterval(() => {
+        if (scrollContainer && !isHovered && !isDragging) {
+          if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
+            scrollContainer.scrollLeft = 0;
+          } else {
+            scrollContainer.scrollLeft += 1; // Slower scroll speed
+          }
+        }
+      }, 50); // Increased interval for smoother scroll
+    };
+
+    startAutoScroll();
+
+    return () => {
+      if (scrollInterval) {
+        clearInterval(scrollInterval);
+      }
+    };
+  }, [isHovered, isDragging]);
+
   return (
     <div className='home'>
-      <Header />
-     
-
-<div class="container">
-        <h2>Our Services</h2>
-        <p>Consulting Services refers to the delivery of specialized expertise or strategic guidance to assist in informed decision-making and problem-solving.</p>
-    </div>
-
-
-<div className="cards-container" onClick={handleServiceClick}>
-  <div className="card">
-    <img src={require('../assets/Utility.png')} alt="Card 1" className="card-image" />
-    <h3 className="card-title">Utility services</h3>
-    <p className="card-description">
-    We offer solutions for utility service providers, businesses, and individuals through advanced tools and technology, enhancing energy consumption visibility and promoting processes that encourage energy savings, contributing to the nation’s carbon neutrality goals.</p>
-  </div>
-
-  <div className="card" onClick={handleServiceClick}>
-    <img src={require('../assets/Business.png')} alt="Card 2" className="card-image" />
-    <h3 className="card-title">Business services</h3>
-    <p className="card-description">Rebates are often undervalued by companies and perceived as a complex process by consumers. Our Instant Rebate Solutions simplify this by streamlining the process at the point of purchase, enabling companies to focus on boosting sales, increasing revenue, and gathering valuable customer data for future marketing efforts.</p>
-  </div>
-
-  <div className="card" onClick={handleServiceClick}>
-    <img src={require('../assets/it-staff.png')} alt="Card 3" className="card-image" />
-    <h3 className="card-title">IT Staff Augmentation</h3>
-    <p className="card-description">We leverage our expertise to connect you with top talent tailored to your company’s niche and culture. Say goodbye to sorting through countless resumes and focus on what matters most while we handle your recruitment needs through our Placement Services. We understand the importance of hiring skilled and experienced professionals, and our team excels at delivering the best candidates for your business.</p>
-  </div>
-  <div className="card" onClick={handleServiceClick}>
-    <img src={require('../assets/application-development.png')} alt="Card 1" className="card-image" />
-    <h3 className="card-title">Application Development</h3>
-    <p className="card-description">We offer application development services to empower your business with highly functional and user-friendly applications built on platforms such as Java, .Net, iOS, and Android. Our flagship products, **CryptoSurvey360** and **Clidiem**, reflect our vision, clarity, and commitment to delivering exceptional quality and innovation.</p>
-  </div>
-
-  <div className="card" onClick={handleServiceClick}>
-    <img src={require('../assets/outsourcing.png')} alt="Card 2" className="card-image" />
-    <h3 className="card-title">Outsourcing</h3>
-    <p className="card-description">Business Process Outsourcing & Recruitment Process Outsourcing</p>
-    
-    
-  </div>
-
-  <div className="card" onClick={handleServiceClick}>
-    <img src={require('../assets/Quality.png')} alt="Card 3" className="card-image" />
-    <h3 className="card-title">Quality Assurance</h3>
-    <p className="card-description">Maintaining quality leaves no room for errors, which is why robust testing is essential. At Empaneltech, we provide quality assurance and testing services that help businesses worldwide minimize testing time and effort. Our approach emphasizes industry-specific domains and technology-driven testing to deliver reliable results.</p>
-  </div>
-</div>
-
-
-
-
-
-<div className="container" >
-        <h2>Salesforce Services</h2>
-        <p>Salesforce, Inc. is a cloud computing and social enterprise software-as-a-service (SaaS) provider based in San Francisco.</p>
-    </div>
-     
-
-    <div className="blog-cards-container">
-    <div className="blog-card">
-        <img 
-            src={marketing} 
-            alt="Marketing" 
-            className="blog-card-image" 
-        />
-        <div className="blog-card-content">
-            <h3 className="blog-card-title">Marketing & PR</h3>
-            <p className="blog-card-description">
-            We take you beyond the mechanics of these marketing & PR tools to help you leverage the cloud to gain customer insight and voice effective messaging.....
+      <Header 
+        title="Electricity, Water Whatever the Utility We Have the Solution" 
+        description="here are many variations of passages of available, but the majority have suffered alteration in some form,words which don't look even slightly believable." 
+      />
+      
+      <section className="team-section">
+        <div className="team-content">
+          <div className="team-text">
+            <h2>We are a dedicated team of innovative Data Scientists, Software Engineers, Domain Experts, Analysts and more!</h2>
+            <p>
+              We are committed to simplifying complex use cases by using our proprietary 
+              Minsky Al Engine to enable better outcomes that result in happier humans!
             </p>
-            <a href="#" className="blog-read-more" onClick={handleSalesforceClick}>Read More</a>
-        </div>
-    </div>
-
-    <div className="blog-card">
-        <img 
-            src={sales} 
-            alt="Sales Management" 
-            className="blog-card-image" 
-        />
-        <div className="blog-card-content">
-            <h3 className="blog-card-title">Sales Management</h3>
-            <p className="blog-card-description">
-                Discover effective techniques and strategies for managing sales teams and improving business performance through strategic sales approaches.
-            </p>
-            <a href="#" className="blog-read-more" onClick={handleSalesforceClick}>Read More</a>
-        </div>
-    </div>
-
-    <div className="blog-card">
-        <img 
-            src={customer} 
-            alt="Customer Support" 
-            className="blog-card-image" 
-        />
-        <div className="blog-card-content">
-            <h3 className="blog-card-title">Customer Support Excellence</h3>
-            <p className="blog-card-description">
-                Learn about best practices in customer support and service delivery to enhance customer satisfaction and loyalty.
-            </p>
-            <a href="#" className="blog-read-more" onClick={handleSalesforceClick}>Read More</a>
-        </div>
-    </div>
-</div>
-
-<div className="products-section">
-      <h2 className="products-title">Our Products</h2>
-      <div className="products-container">
-        {products.map((product, index) => (
-          <div key={index} className="product-card">
-            <h3 className="product-title">{product.title}</h3>
-            <p className="product-description">{product.description}</p>
           </div>
-        ))}
-      </div>
-    </div>
+          <div className="team-image">
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+              alt="Our Team Collaboration" 
+            />
+          </div>
+        </div>
+      </section>
 
-     
- 
+      <section className="minsky-section">
+        <div className="minsky-content">
+          <div className="minsky-image">
+            <img 
+              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+              alt="AI Technology" 
+            />
+          </div>
+          <div className="minsky-text">
+            <h2>We are MINSKY™ - AI Engine</h2>
+            <p>
+              Our mission is to utilize Artificial Intelligence (AI) to execute tasks naturally 
+              associated with human intelligence: speech recognition, decision-making, visual 
+              perception, and language translation. To ensure success we deploy algorithms 
+              spanning machine learning, deep learning, NLP and neural networks or any branch 
+              of AI wherever required to perform complex tasks such as predictions, 
+              recommendations, anomaly detection and much more.
+            </p>
+            <p>
+              Using our proprietary Minsky™ AI platform we provide custom end-to-end innovative 
+              solutions to drive business transformations resulting in smart processes and 
+              data driven decisions.
+            </p>
+            <button className="read-more-btn">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      <section className="industries-section">
+        <div className="industries-content">
+          <h2>Explore How Minsky™ Solves Complex Business Challenges for the World's Biggest Industries!</h2>
+          <div className="cards-container">
+            <button 
+              className="scroll-button left" 
+              onClick={() => scroll('left')}
+              aria-label="Scroll left"
+            >
+              <FaChevronLeft />
+            </button>
+            <div 
+              className="cards-scroll" 
+              ref={scrollRef}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={() => {
+                setIsHovered(false);
+                handleMouseUp();
+              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleMouseUp}
+              onTouchMove={handleTouchMove}
+            >
+              {[...industryCards, ...industryCards].map((card, index) => (
+                <div 
+                  className="industry-card" 
+                  key={index}
+                  style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+                >
+                  <div className="card-icon">
+                    {card.icon}
+                  </div>
+                  <h3 className="card-title">{card.title}</h3>
+                </div>
+              ))}
+            </div>
+            <button 
+              className="scroll-button right" 
+              onClick={() => scroll('right')}
+              aria-label="Scroll right"
+            >
+              <FaChevronRight />
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

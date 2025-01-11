@@ -10,7 +10,9 @@ import SalesforceServices from './Screens/SalesforceServices';
 import Careers from './Screens/Careers';
 import Services from './Screens/Services';
 import Admin from './Screens/AdminLogin/Admin';
-
+import Industries from './Screens/Industries';
+import Expertise from './Screens/Expertise';
+import Projectscompleted from './Screens/Projectscompleted';
 function App() {
   return (
     <Router>
@@ -25,6 +27,9 @@ function App() {
             <Route path="/careers" element={<Careers />} />
             <Route path="/Services" element={<Services />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/industries" element={<Industries />} />
+            <Route path="/expertise/:expertiseId" element={<Expertise />} />
+            <Route path="/projectscompleted" element={<Projectscompleted />} />
           </Routes>
         </main>
         <Footer />

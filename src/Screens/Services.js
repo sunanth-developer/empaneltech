@@ -7,20 +7,24 @@ import staff from '../assets/Staff-Augmentation.jpg'
 import custom from '../assets/Custom-Application-Development.jpg'
 import outsourcing from '../assets/Outsourcing1.jpg'
 import quality from '../assets/qa.jpg'
+import Header from './Header';
 const Services = () => {
   const services = [
     {
+      id: 'utility-services',
       title: "Utility Services",
       content: `At Sidram , we empower utility service providers, businesses, and individuals with advanced tools and technology to enhance energy consumption visibility. Our solutions are designed to promote energy conservation, contributing to the nation's carbon neutrality goals. We offer utility solutions in the following sectors:`,
       list: ["Electricity", "Water", "Gas"],
       image: utility
     },
     {
+      id: 'business-services',
       title: "Business Services",
       content: `Rebates are often underestimated by companies and seen as a complex process by consumers. Our Instant Rebate Solutions simplify this process, making it seamless and immediate at the point of purchase. This enables companies to focus on sales promotion, revenue growth, and collecting valuable customer data for future marketing.`,
       image: business
     },
     {
+      id: 'staff-augmentation',
       title: "IT Staff Augmentation",
       content: `We leverage our expertise to connect you with top-tier talent that aligns with your company's niche and culture. Say goodbye to screening countless resumes—let us handle recruitment, so you can focus on what truly matters.`,
       features: {
@@ -38,10 +42,11 @@ const Services = () => {
           "Contract Placement: Hire temporary or project-based resources"
         ]
       },
-      image:staff,
+      image: staff,
       contact: "678-606-9026 EXT 404"
     },
     {
+      id: 'custom-development',
       title: "Custom Application Development",
       content: `Sidram  offers application development services to empower your business with highly functional, user-friendly solutions. We specialize in developing applications across platforms, including Java, .Net, iOS, and Android.
 
@@ -50,6 +55,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
       image: custom
     },
     {
+      id: 'outsourcing',
       title: "Outsourcing",
       content: null,
       features: {
@@ -72,6 +78,7 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
       image: outsourcing
     },
     {
+      id: 'quality-assurance',
       title: "Quality Assurance & Testing Services",
       content: "At Sidram , we understand that maintaining quality is paramount, leaving no room for errors. Robust testing is essential, and we provide comprehensive quality assurance and testing services to help businesses worldwide save time and effort.",
       features: {
@@ -106,11 +113,11 @@ Our flagship products, CryptoSurvey360 and Clidiem, are a testament to our visio
 
   return (
     <div className="services-page">
-      <h1 className="services-title">Services</h1>
+      <Header title="Services"  description="At Salesfield, we empower utility service providers, businesses, and individuals with advanced tools and technology to enhance energy consumption visibility. Our solutions are designed to promote energy conservation, contributing to the nation's carbon neutrality goals. We offer utility solutions in the following sectors:" />
       
       <div className="services-container">
         {services.map((service, index) => (
-          <div key={service.title} className="service-card">
+          <div key={service.id} id={service.id} className="service-card">
             <h2 className="service-title">{service.title}</h2>
             
             <div className={`service-content ${index % 2 === 1 ? 'reverse' : ''}`}>

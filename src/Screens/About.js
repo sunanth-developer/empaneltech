@@ -1,11 +1,12 @@
 import React from 'react';
 import './About.css';
+import Header from './Header';
 export default function AboutUs  ()  {
   return (
     <div className="about-us-container">
+      <Header title="About Us" description="You can only profit from what you manage, and you can only manage what you measure." />
       {/* Company Description Section */}
       <section className="company-section">
-        <h2>About Us</h2>
         <p className='aboutusheadtext'>You can only profit from what you manage, and you can only manage what you measure.</p>
         
         <div className="about-us-text-container">

@@ -1,11 +1,70 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import './Footer.css';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaProjectDiagram, FaBuilding, FaMicrochip, FaUsers, FaBriefcase } from 'react-icons/fa';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../Firebase';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const [jobCount, setJobCount] = useState(0);
+  useEffect(() => {
+    const fetchJobCount = async () => {
+      const querySnapshot = await getDocs(collection(db, 'jobs'));
+      setJobCount(querySnapshot.docs.length);
+    };
+
+    fetchJobCount();
+  }, []);
+  const handleJobClick = () => {
+    // First navigate to careers page
+    navigate('/careers');
+    
+    // Then set a small timeout to ensure navigation completes before setting state
+    setTimeout(() => {
+      // Update the state and scroll after navigation
+    navigate('/careers');
+      
+      // Scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 100);
+  };
+
   return (
     <footer className="footer">
+      {/* Stats Banner at Top */}
+      <div className="stats-banner">
+        <div className="stats-container">
+          <div className="stat-item clickable" onClick={handleJobClick}>
+            <FaBriefcase className="stat-icon" />
+            <div className="stat-number">{jobCount}</div>
+            <div className="stat-text">Job Openings</div>
+          </div>
+          
+          <div className="stat-item">
+            <FaBuilding className="stat-icon" />
+            <div className="stat-number">1760</div>
+            <div className="stat-text">World Wide Branch</div>
+          </div>
+          
+          <div className="stat-item">
+            <FaMicrochip className="stat-icon" />
+            <div className="stat-number">2738</div>
+            <div className="stat-text">Digital Instruments</div>
+          </div>
+          
+          <div className="stat-item">
+            <FaUsers className="stat-icon" />
+            <div className="stat-number">500+</div>
+            <div className="stat-text">Happy Clients</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
       <div className="footer-content">
         {/* Company Description */}
         <div className="footer-section">
@@ -13,7 +72,7 @@ const Footer = () => {
           <p>
             Empaneltech thinks long-term! We serve clients with the goal to create 
             partnerships which is why it is our fundamental focus to avoid mistakes by all 
-            costs and exceed client goals! To Empaneltech , all our clients are equal.
+            costs and exceed client goals! To Empaneltech, all our clients are equal.
           </p>
           <div className="social-links">
             <h4>Follow us</h4>
@@ -53,7 +112,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Empaneltech . All rights reserved.</p>
+        <p>&copy; 2019 Empaneltech. All rights reserved.</p>
       </div>
     </footer>
   );

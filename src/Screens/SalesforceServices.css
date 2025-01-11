@@ -1,161 +1,174 @@
 /* Main container */
 .salesforce-services {
-  padding: 20px;
-  background-color: #ffffff;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
 /* Page header */
 .page-header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 40px 0;
 }
 
 .main-title {
-  color: #000000;
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
+/* Services container */
+.services-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px 0;
+}
+
 /* Service section */
 .service-section {
-  padding: 10px;
-  background-color: #ffffff;
-}
-
-/* Service container - Card styling */
-.service-container {
-  width: 90%;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Header section */
-.service-header {
-  text-align: center;
-  margin-bottom: 40px;
+  width: 100%;
   padding: 0 20px;
+}
+
+/* Individual service container */
+.service-container {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Service header */
+.service-header {
+  padding: 30px;
+  text-align: center;
 }
 
 .service-title {
-  color: #000000;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 10px;
-  font-weight: 600;
+  color: #333;
 }
 
 .service-subtitle {
-  color: #000000;
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Content section */
+/* Service content */
 .service-content {
   display: flex;
-  flex-direction: row !important;
-  justify-content: space-between;
-  align-items: flex-start;
+  padding: 40px;
   gap: 40px;
-  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90% !important;
 }
 
-/* Text section */
+.service-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Service text content */
 .service-text {
   flex: 0 0 50%;
-  max-width: 50%;
+  width: 50%;
+  padding-right: 20px;
 }
 
 .service-heading {
-  color: #000000;
   font-size: 1.5rem;
   margin-bottom: 15px;
-  font-weight: 500;
+  color: #333;
 }
 
 .service-subheading {
-  color: #000000;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 20px;
+  color: #666;
   line-height: 1.6;
 }
 
-/* List styling */
+/* Service list */
 .service-list {
-  list-style: none;
-  padding-left: 0;
+  list-style-type: disc;
+  padding-left: 20px;
 }
 
 .service-list li {
-  color: #000000;
-  margin-bottom: 12px;
-  padding-left: 20px;
-  position: relative;
-  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #444;
+  line-height: 1.4;
 }
 
-.service-list li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #000000;
-}
-
-/* Image section */
+/* Service image */
 .service-image {
   flex: 0 0 50%;
-  max-width: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .service-image img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
+  object-fit: contain !important;
 }
 
 /* Responsive design */
-@media screen and (max-width: 768px) {
-  .service-container {
-    width: 95%;
-    padding: 20px;
-    margin-bottom: 10px;
-  }
-
-  .service-content {
-    flex-direction: column !important;
-    gap: 20px;
-  }
-
+@media screen and (max-width: 968px) {
   .service-text,
   .service-image {
     flex: 0 0 100%;
-    max-width: 100%;
+    width: 100%;
+    padding-right: 0;
+  }
+  
+  .service-content {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .service-content.reverse {
+    flex-direction: column;
+  }
+
+  .service-image {
+    order: -1; /* Makes image appear first on mobile */
+  }
+
+  .service-section {
+    padding: 0 10px;
+  }
+
+  .service-header {
+    padding: 20px;
   }
 
   .service-title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .service-subtitle {
     font-size: 1rem;
   }
-
-  .service-heading {
-    font-size: 1.3rem;
-  }
 }
 
-/* Last card shouldn't have bottom margin */
-.service-container:last-child {
-  margin-bottom: 10px;
+/* Ensure no unwanted margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
