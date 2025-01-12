@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c1b7e233afb6b7933a4a883da9962ad9",
+    "revision": "53afb88194fdb7c805d76eee89308bcf",
     "url": "/empaneltech/index.html"
   },
   {
-    "revision": "594ab3d4f3f54d8d41cc",
-    "url": "/empaneltech/static/css/main.3a7d135c.chunk.css"
+    "revision": "4f2e64cad951efd4fb7d",
+    "url": "/empaneltech/static/css/main.236b718b.chunk.css"
   },
   {
     "revision": "a7259f264243c4df7d75",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/empaneltech/static/js/3.98b04219.chunk.js"
   },
   {
-    "revision": "594ab3d4f3f54d8d41cc",
-    "url": "/empaneltech/static/js/main.25326b21.chunk.js"
+    "revision": "4f2e64cad951efd4fb7d",
+    "url": "/empaneltech/static/js/main.49ae4110.chunk.js"
   },
   {
     "revision": "6b019894aef6fe9bf330",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/empaneltech/static/media/app_exchange.7ea5dc5e.jpg"
   },
   {
-    "revision": "343cde3a97bf3bf508763a77ef0e4b35",
-    "url": "/empaneltech/static/media/logo.343cde3a.png"
+    "revision": "65d9ad0e0eb8ff8c138af3d161507f16",
+    "url": "/empaneltech/static/media/logo.65d9ad0e.png"
   },
   {
     "revision": "7a17b2a3e0d0791fffb7e03405d8ceaa",
