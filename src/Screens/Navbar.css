@@ -24,6 +24,8 @@
     height: 55px;
     width: auto;
     object-fit: contain;
+    background-color: #ffd900;
+    border-radius: 5px;
 }
 
 /* For even smaller screens */
