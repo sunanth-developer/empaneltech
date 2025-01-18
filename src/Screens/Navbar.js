@@ -88,7 +88,7 @@ const Navbar = () => {
   const salesfieldDropdownItems = [
     { 
       title: 'About SalesField', 
-      path: '/aboutsalesfield',
+      path: '/salesfield',
       id: 'salesfield'
     },
     { 
@@ -217,7 +217,7 @@ const Navbar = () => {
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
         <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
         <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
-        <li><Link to="/industries" onClick={handleLinkClick}>Industries</Link></li>
+       {/* <li><Link to="/industries" onClick={handleLinkClick}>Industries</Link></li> */}
 
         <li className={`dropdown ${activeDropdown === 'salesfield' ? 'active' : ''}`}>
           <button 
@@ -260,7 +260,8 @@ const Navbar = () => {
             ))}
           </ul>
         </li>
-        <li className={`dropdown ${activeDropdown === 'expertise' ? 'active' : ''}`}>
+      
+      {/*  <li className={`dropdown ${activeDropdown === 'expertise' ? 'active' : ''}`}>
           <button 
             className="dropdown-toggle"
             onClick={() => handleDropdownClick('expertise')}
@@ -280,6 +281,7 @@ const Navbar = () => {
             ))}
           </ul>
         </li>
+        */}
         <li className={`dropdown ${activeDropdown === 'projectscompleted' ? 'active' : ''}`}>
           <button 
             className="dropdown-toggle"

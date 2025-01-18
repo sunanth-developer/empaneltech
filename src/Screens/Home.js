@@ -1,24 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from './Header';
 import './Home.css';
-import { FaSeedling, FaUsers, FaHandHoldingHeart, FaShieldAlt, FaIndustry, 
-         FaHeartbeat, FaUserTie, FaCar, FaCloudSun, FaChartLine, 
-         FaShoppingCart, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaHospital, FaShoppingCart, FaUniversity, FaTruck, 
+         FaPlane, FaHome, FaFilm, FaIndustry, 
+         FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { IoMdGitNetwork } from 'react-icons/io';
 
 const industryCards = [
-  { icon: <FaSeedling />, title: 'Agriculture' },
-  { icon: <FaUsers />, title: 'Customer Retention/Service' },
-  { icon: <FaHandHoldingHeart />, title: 'Charitable Contributions' },
-  { icon: <FaShieldAlt />, title: 'Insurance' },
-  { icon: <FaIndustry />, title: 'Manufacturing and IoT' },
-  { icon: <FaHeartbeat />, title: 'Healthcare/Medical' },
-  { icon: <FaUserTie />, title: 'Human Capital Management' },
-  { icon: <FaCar />, title: 'Automotive' },
-  { icon: <FaCloudSun />, title: 'Climate Change' },
-  { icon: <FaChartLine />, title: 'Fintech' },
-  { icon: <FaShoppingCart />, title: 'Retail' },
-  { icon: <IoMdGitNetwork />, title: 'Supply Chain' }
+  { icon: <FaHospital />, title: 'Healthcare' },
+  { icon: <FaShoppingCart />, title: 'Retail and E-commerce' },
+  { icon: <FaUniversity />, title: 'Banking and Financial Services' },
+  { icon: <FaTruck />, title: 'Supply Chain and Logistics' },
+  { icon: <FaPlane />, title: 'Travel' },
+  { icon: <FaHome />, title: 'Real Estate' },
+  { icon: <FaFilm />, title: 'Media and Entertainment' },
+  { icon: <FaIndustry />, title: 'Manufacturing' }
 ];
 
 const Home = () => {
@@ -74,6 +70,10 @@ const Home = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
+
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     let scrollInterval;
@@ -84,14 +84,16 @@ const Home = () => {
           if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth) {
             scrollContainer.scrollLeft = 0;
           } else {
-            scrollContainer.scrollLeft += 1; // Slower scroll speed
+            const cardWidth = scrollContainer.querySelector('.industry-card').offsetWidth;
+            scrollContainer.scrollLeft += 1; // Consistent scroll speed for all devices
           }
         }
-      }, 50); // Increased interval for smoother scroll
+      }, 30); // Faster interval for smoother scroll
     };
 
     startAutoScroll();
 
+    // Clear interval on component unmount
     return () => {
       if (scrollInterval) {
         clearInterval(scrollInterval);
@@ -102,18 +104,20 @@ const Home = () => {
   return (
     <div className='home'>
       <Header 
-        title="Electricity, Water Whatever the Utility We Have the Solution" 
-        description="here are many variations of passages of available, but the majority have suffered alteration in some form,words which don't look even slightly believable." 
+        title=" AI -ArtificIal Intellignece is the future Natural Intelligence and we are proud to bridge the PATH" 
+        description="" 
       />
       
       <section className="team-section">
         <div className="team-content">
           <div className="team-text">
-            <h2>We are a dedicated team of innovative Data Scientists, Software Engineers, Domain Experts, Analysts and more!</h2>
+            <h4>Let us help you get the most out of Sales Cloud. We know the sales environment and how process, technology and information mobility must come together to ensure the demands of the sales organization are met.</h4>
             <p>
-              We are committed to simplifying complex use cases by using our proprietary 
-              Minsky Al Engine to enable better outcomes that result in happier humans!
+            Customized Platforms, solutions and adaptations
             </p>
+            <p>Interactive consultations throughout the planning, development and implementation process</p>
+            <p>Reduced number of clicks and streamlined procedures</p>
+            <p>Onsite/remote training.</p>
           </div>
           <div className="team-image">
             <img 
@@ -133,20 +137,16 @@ const Home = () => {
             />
           </div>
           <div className="minsky-text">
-            <h2>We are MINSKY™ - AI Engine</h2>
+            <h2>OPERATIONAL EFFICIENCY FORCE.COM DEVELOPMENT</h2>
             <p>
-              Our mission is to utilize Artificial Intelligence (AI) to execute tasks naturally 
-              associated with human intelligence: speech recognition, decision-making, visual 
-              perception, and language translation. To ensure success we deploy algorithms 
-              spanning machine learning, deep learning, NLP and neural networks or any branch 
-              of AI wherever required to perform complex tasks such as predictions, 
-              recommendations, anomaly detection and much more.
+            Streamline procedures and processes with. Our training and development team can help you get the most out of Force.com by creating a customized platform tailored to the contours of your business. Get everything you need from Force.com while eliminating everything you don't.
             </p>
             <p>
-              Using our proprietary Minsky™ AI platform we provide custom end-to-end innovative 
-              solutions to drive business transformations resulting in smart processes and 
-              data driven decisions.
+            Customized Platforms, solutions and adaptations
             </p>
+            <p>Interactive consultations throughout the planning, development and implementation process</p>
+            <p>Reduced number of clicks and streamlined procedures</p>
+            <p>Onsite/remote training.</p>
             <button className="read-more-btn">Read More</button>
           </div>
         </div>
@@ -154,29 +154,23 @@ const Home = () => {
 
       <section className="industries-section">
         <div className="industries-content">
-          <h2>Explore How Minsky™ Solves Complex Business Challenges for the World's Biggest Industries!</h2>
+          
           <div className="cards-container">
-            <button 
-              className="scroll-button left" 
-              onClick={() => scroll('left')}
-              aria-label="Scroll left"
-            >
-              <FaChevronLeft />
-            </button>
+            
             <div 
-              className="cards-scroll" 
+              className={`cards-scroll ${isDragging ? 'dragging' : ''}`}
               ref={scrollRef}
-              onMouseDown={handleMouseDown}
-              onMouseUp={handleMouseUp}
-              onMouseMove={handleMouseMove}
+              onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => {
                 setIsHovered(false);
                 handleMouseUp();
               }}
-              onMouseEnter={() => setIsHovered(true)}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
               onTouchStart={handleTouchStart}
-              onTouchEnd={handleMouseUp}
               onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
             >
               {[...industryCards, ...industryCards].map((card, index) => (
                 <div 
@@ -191,13 +185,7 @@ const Home = () => {
                 </div>
               ))}
             </div>
-            <button 
-              className="scroll-button right" 
-              onClick={() => scroll('right')}
-              aria-label="Scroll right"
-            >
-              <FaChevronRight />
-            </button>
+           
           </div>
         </div>
       </section>

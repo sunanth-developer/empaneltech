@@ -39,7 +39,7 @@ const Careers = () => {
         return (
           <div className="careers-content">
             <div className="careers-hero">
-              <h1>Careers at EmpanelTech  Technologies</h1>
+              <h1>Careers at EmpanelTech  </h1>
               <p>Join our team and be part of something extraordinary</p>
             </div>
 

@@ -16,8 +16,8 @@
   flex: 1;
 }
 
-.team-text h2 {
-  font-size: 2.5rem;
+.team-text h4 {
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   background: linear-gradient(45deg, #4a90e2, #67b26f);
   -webkit-background-clip: text;
@@ -285,8 +285,7 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  user-select: none;
-  cursor: grab;
+  user-select: none; /* Prevent text selection while dragging */
 }
 
 .cards-scroll::-webkit-scrollbar {
@@ -294,12 +293,12 @@
 }
 
 .cards-scroll.dragging {
-  cursor: grabbing;
   scroll-behavior: auto;
+  cursor: grabbing;
 }
 
 .industry-card {
-  min-width: 280px;
+  min-width: 300px;
   background: linear-gradient(145deg, #1e1e1e, #2d2d2d);
   border-radius: 16px;
   padding: 2.5rem 2rem;
@@ -331,17 +330,13 @@
 
 .industry-card h3 {
   font-size: 1.4rem;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
   font-weight: 600;
   line-height: 1.4;
   letter-spacing: 0.5px;
-  text-shadow: none;
   margin: 0;
   padding: 0;
-  background: none;
-  -webkit-background-clip: unset;
-  background-clip: unset;
 }
 
 /* Remove any hover effects that might change text color */
@@ -355,18 +350,8 @@
 
 @media screen and (max-width: 768px) {
   .industry-card {
-    min-width: 240px;
+    min-width: 260px;
     padding: 2rem 1.5rem;
-  }
-
-  .card-icon {
-    font-size: 3rem;
-  }
-
-  .industry-card h3 {
-    font-size: 1.2rem;
-    color: #fff !important;
-    -webkit-text-fill-color: #fff !important;
   }
 }
 
@@ -401,4 +386,16 @@
 .card-title {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .cards-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 1rem;
+  }
+
+  .industry-card {
+    min-width: 260px;
+  }
 }

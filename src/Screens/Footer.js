@@ -40,27 +40,27 @@ const Footer = () => {
         <div className="stats-container">
           <div className="stat-item clickable" onClick={handleJobClick}>
             <FaBriefcase className="stat-icon" />
-            <div className="stat-number">{jobCount}</div>
+            <div className="stat-number">903</div>
             <div className="stat-text">Job Openings</div>
           </div>
-          
+          <div className="stat-item">
+            <FaUsers className="stat-icon" />
+            <div className="stat-number">528</div>
+            <div className="stat-text">Happy Clients</div>
+          </div>
           <div className="stat-item">
             <FaBuilding className="stat-icon" />
-            <div className="stat-number">1760</div>
-            <div className="stat-text">World Wide Branch</div>
+            <div className="stat-number">5824</div>
+            <div className="stat-text">Happy closures</div>
           </div>
           
           <div className="stat-item">
             <FaMicrochip className="stat-icon" />
-            <div className="stat-number">2738</div>
-            <div className="stat-text">Digital Instruments</div>
+            <div className="stat-number">999</div>
+            <div className="stat-text">Locations</div>
           </div>
           
-          <div className="stat-item">
-            <FaUsers className="stat-icon" />
-            <div className="stat-number">500+</div>
-            <div className="stat-text">Happy Clients</div>
-          </div>
+          
         </div>
       </div>
 

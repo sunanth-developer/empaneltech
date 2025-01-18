@@ -13,6 +13,7 @@ import Admin from './Screens/AdminLogin/Admin';
 import Industries from './Screens/Industries';
 import Expertise from './Screens/Expertise';
 import Projectscompleted from './Screens/Projectscompleted';
+import SalesField from './Screens/SalesField';
 function App() {
   return (
     <Router>
@@ -30,6 +31,7 @@ function App() {
             <Route path="/industries" element={<Industries />} />
             <Route path="/expertise/:expertiseId" element={<Expertise />} />
             <Route path="/projectscompleted" element={<Projectscompleted />} />
+            <Route path="/salesfield" element={<SalesField />} />
           </Routes>
         </main>
         <Footer />
